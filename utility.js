@@ -1,11 +1,11 @@
 //uc4
-//After 20 days of playing total amount win or loss
+//Each month would like to know the days won and lost and by how much
 function gamblingSimulator()
-{
+{   let arr=[];
     const stack=100;
     const bet=1;
     const isWin=1;
-    const daysInMonth=20;
+    const daysInMonth=30;
     let maxWin=stack+stack/2;
     let maxLoose=stack-stack/2;
     let cash=stack;
@@ -23,7 +23,11 @@ function gamblingSimulator()
   }
   cash=cash-stack;
   totalcash=totalcash+cash;
-  console.log("cash is : "+(cash-stack));
+  arr[index]=totalcash;
+  if(cash > 0)
+  console.log("win : "+ cash);
+  else
+  console.log("lose : "+cash);
  }
 console.log("total cash : "+totalcash);
 }
